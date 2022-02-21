@@ -1,0 +1,141 @@
+.feature {
+  padding: 83px 32px 78px;
+  text-align: center;
+
+  @include breakpoint(xlarge) {
+    padding: 78px 0 80px;
+  }
+
+  &-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.55;
+    letter-spacing: 0.2px;
+    color: $veryDarkBlue;
+    margin-bottom: 15px;
+
+    @include breakpoint(small) {
+      font-size: 28px;
+    }
+
+    @include breakpoint(large) {
+      font-size: 32px;
+      margin-bottom: 17px;
+    }
+
+    @include breakpoint(xlarge) {
+      font-size: 36px;
+    }
+
+    span {
+      font-weight: 200;
+      letter-spacing: 0.1px;
+    }
+  }
+
+  &-description {
+    line-height: 1.65;
+    margin: 0 auto 75px;
+    max-width: 510px;
+
+    @include breakpoint(large) {
+      margin-bottom: 63px;
+    }
+  }
+
+  &-cards {
+    display: grid;
+    gap: 25px;
+    max-width: 1110px;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+
+    @include breakpoint(small) {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    @include breakpoint(large) {
+      gap: 30px;
+    }
+
+    @include breakpoint(xlarge) {
+      grid-template-rows: 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  &-card {
+    position: relative;
+    padding: 26px 28px 28px;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 24px 36px -12px rgba(0, 0, 0, 0.15);
+
+    @include breakpoint(small) {
+      padding: 32px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 4px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &__title {
+      font-size: 20px;
+      font-weight: 600;
+      color: $veryDarkBlue;
+      margin-bottom: 3px;
+    }
+
+    &__description {
+      font-size: 13px;
+      line-height: 1.75;
+      letter-spacing: 0.1px;
+      margin-bottom: 32px;
+    }
+
+    &__icon {
+      img {
+        display: block;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.card-1 {
+  @include breakpoint(xlarge) {
+    grid-row: 1 / -1;
+  }
+
+  &::before {
+    background-color: $cyan;
+  }
+}
+
+.card-2::before {
+  background-color: $red;
+}
+
+.card-3::before {
+  background-color: $orange;
+}
+
+.card-4 {
+  @include breakpoint(xlarge) {
+    grid-row: 1 / -1;
+    grid-column: 3 / -1;
+  }
+
+  &::before {
+    background-color: $blue;
+  }
+}
+
